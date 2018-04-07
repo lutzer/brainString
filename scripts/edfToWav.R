@@ -2,7 +2,7 @@
 library(edfReader)
 library(seewave)
 
-filename = "SC4001E0-PSG.edf"
+filename = "data/SC4001E0-PSG.edf"
 
 header = readEdfHeader(filename)
 
@@ -17,8 +17,8 @@ signals = readEdfSignals(header)
 observedSignal = signals[[1]]
 
 #write data to file
-write(observedSignal$signal, file = "raw.txt", ncolumns=1, append=FALSE)
+write(observedSignal$signal, file = "output/raw.txt", ncolumns=1, append=FALSE)
 
 # generate Wav
 system(paste("./generateWav.py", 
-             "raw.txt", "output.wav", observedSignal$sRate*4))
+             "output/raw.txt", "output/signal.wav", observedSignal$sRate*4))

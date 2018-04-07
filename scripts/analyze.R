@@ -2,7 +2,7 @@
 library(edfReader)
 library(seewave)
 
-filename = "sc4002e0.rec"
+filename = "data/sc4002e0.rec"
 
 header = readEdfHeader(filename)
 
@@ -45,5 +45,7 @@ compareFrequencies = function(data, number_of_chunks, bitrate) {
     i = i + 1
   }
 }
+
+compareFrequencies(ndata[0:20000], 20, observedSignal$sRate)
 
 
