@@ -1,5 +1,2 @@
-scripts/output/
-scripts/data/
-!scripts/output/.keep
-!scripts/data/.keep
-!.keep
+scripts/output/*
+scripts/data/*
