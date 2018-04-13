@@ -1,0 +1,29 @@
+# @Author: Lutz Reiter, http://www.lu-re.de
+# @Date:   2018-04-13T11:29:55+02:00
+# @Project: Brain String
+# @Last modified by:   lutz
+# @Last modified time: 2018-04-13T13:55:36+02:00
+
+
+RUN_IN_FULLSCREEN = False
+RES_MULTIPLIER = 1.0
+SCREEN_SIZE = [320, 240]
+
+# fonts
+FONT_FAMILY = "Perfect DOS VGA 437"
+FONT_SIZE = int(30 * RES_MULTIPLIER)
+LINE_SPACING = int(45 * RES_MULTIPLIER)
+
+# colors
+BG_COLOR = [255,0,0,255]
+BUTTON_COLOR = [0,255,0,255]
+TEXT_COLOR = [255, 255, 255, 255]
+DIALOG_BG_COLOR = [66, 66, 66, 255]
+DIALOG_TEXT_COLOR = [255, 255, 255, 255]
+
+# spacings
+PADDING = int(20 * RES_MULTIPLIER)
+MARGIN = int(10 * RES_MULTIPLIER)
+DIALOG_PADDING = 100
+
+STROKE_WIDTH = 5
