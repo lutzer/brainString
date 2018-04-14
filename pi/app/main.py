@@ -4,7 +4,7 @@
 # @Date:   2018-04-13T11:30:50+02:00
 # @Project: Brain String
 # @Last modified by:   lutz
-# @Last modified time: 2018-04-13T14:46:21+02:00
+# @Last modified time: 2018-04-13T15:33:30+02:00
 
 from __future__ import with_statement
 import time
@@ -17,27 +17,40 @@ from ui.PiScreen import PiScreen
 
 audioThread = None
 ui = None
+running = False
 
 # Debug options
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 def init():
-	global ui
+	logger.info("starting program")
+	global ui, running
 	ui = PiScreen(fps = 30)
+	ui.keyPressEvent += onKeyPressEvent
+	running = True
+	logger.info("program initialized, starting loop")
 
 def loop():
 	global ui
 	ui.loop()
 
 def stop():
+	logger.info("programm stopped")
 	global ui
 	if (ui):
 		ui.stop()
+
+def onKeyPressEvent(symbol):
+	global running
+	# press esc to quit
+	if symbol == 65307:
+		running = False
+
 ### start main loop
 init()
 try:
-   while True:
+   while running:
 	  loop()
 except KeyboardInterrupt:
    print("# program loop interrupted")

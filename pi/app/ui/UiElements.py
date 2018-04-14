@@ -2,30 +2,40 @@
 # @Date:   2018-04-13T13:39:13+02:00
 # @Project: Brain String
 # @Last modified by:   lutz
-# @Last modified time: 2018-04-13T14:05:00+02:00
-import pygame
+# @Last modified time: 2018-04-13T17:09:07+02:00
+import pyglet
 
 from config import *
 
-class UiWIdget(object):
+class UiWidget(pyglet.graphics.Batch):
 
-	def __init__(self, surface, position, size):
-		self.surface = surface
+	def __init__(self, position, size=[0,0]):
+		pyglet.graphics.Batch.__init__(self)
 		self.position = position
 		self.size = size
-
-	def update(self):
-		return;
-
-	def draw(self, surface):
-		return;
 
 	def disable(self,disabled):
 		self.disabled = disabled
 
-class UiButton(UiWIdget):
+class UiLabel(UiWidget):
+
+	def __init__(self, text, position):
+		UiWidget.__init__(self, position)
+
+		label = pyglet.text.Label(text,
+			font_name=FONT_FAMILY,
+			font_size=FONT_SIZE,
+			x=position[0],
+			y=position[1],
+			anchor_x='center',
+			anchor_y='center',
+			batch = self
+		)
+
+
+class UiButton(UiWidget):
 	def __init__(self, surface, position, size, label = "None"):
-		UiWIdget.__init__(self, surface, position, size)
+		UiWidget.__init__(self, surface, position, size)
 
 	def draw(self):
-		 pygame.draw.rect(self.surface, BUTTON_COLOR, self.position + self.size)
+		return
