@@ -2,7 +2,7 @@
 # @Date:   2018-04-13T13:08:41+02:00
 # @Project: Brain String
 # @Last modified by:   lutz
-# @Last modified time: 2018-04-13T17:08:40+02:00
+# @Last modified time: 2018-04-14T19:49:45+02:00
 import pyglet
 import time
 
@@ -11,7 +11,7 @@ from config import *
 
 from utils.eventHandler import EventHandler
 from utils.pygletHelpers import convertColor
-from UiElements import UiLabel
+from UiElements import UiLabel, UiImage
 
 class PiScreen(object):
 
@@ -29,7 +29,8 @@ class PiScreen(object):
 		self.height = SCREEN_SIZE[1]
 
 		#setup ui elements
-		self.title = UiLabel("Rattus norvegicus forma domestica", [self.width/2, self.height/2])
+		self.title = UiLabel("Rattus norvegicus forma domestica", [self.width/2, self.height - 20])
+		self.image = UiImage("assets/images/rat.png", [100,0], [280,0])
 
 		# setup window events
 		@self.window.event
@@ -47,6 +48,7 @@ class PiScreen(object):
 		self.window.clear()
 
 		self.title.draw()
+		self.image.draw()
 
 	def loop(self):
 		# redraw frame

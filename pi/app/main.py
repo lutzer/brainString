@@ -4,13 +4,12 @@
 # @Date:   2018-04-13T11:30:50+02:00
 # @Project: Brain String
 # @Last modified by:   lutz
-# @Last modified time: 2018-04-13T15:33:30+02:00
+# @Last modified time: 2018-04-14T18:50:49+02:00
 
 from __future__ import with_statement
 import time
 import logging
 import sys
-import pygame
 
 from config import *
 from ui.PiScreen import PiScreen

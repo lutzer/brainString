@@ -2,7 +2,7 @@
 # @Date:   2018-04-13T11:29:55+02:00
 # @Project: Brain String
 # @Last modified by:   lutz
-# @Last modified time: 2018-04-13T17:01:24+02:00
+# @Last modified time: 2018-04-14T19:48:34+02:00
 
 
 RUN_IN_FULLSCREEN = False
@@ -19,7 +19,7 @@ TEXT_INDENT = 20
 # colors
 BG_COLOR = [200,200,200,255]
 BUTTON_COLOR = [0,255,0,255]
-TEXT_COLOR = [255, 255, 255, 255]
+TEXT_COLOR = [0, 0, 0, 255]
 DIALOG_BG_COLOR = [66, 66, 66, 255]
 DIALOG_TEXT_COLOR = [255, 255, 255, 255]
 
